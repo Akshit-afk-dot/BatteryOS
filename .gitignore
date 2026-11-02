@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# API runtime data (database and stored files)
+services/api/data/
+services/api/.env
+
+# Web
+apps/web/node_modules/
+apps/web/.next/
+apps/web/next-env.d.ts
+apps/web/*.tsbuildinfo
+apps/web/.env*.local
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

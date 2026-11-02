@@ -1,0 +1,21 @@
+{
+  "name": "batteryos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BatteryOS — battery intake, test data, diagnostic reports and quotations for refurbishment businesses.",
+  "scripts": {
+    "setup": "node scripts/bos.mjs setup",
+    "dev": "node scripts/bos.mjs dev",
+    "dev:api": "node scripts/bos.mjs api --reload",
+    "dev:web": "node scripts/bos.mjs web",
+    "build": "node scripts/bos.mjs build",
+    "start:web": "node scripts/bos.mjs web:start",
+    "start:api": "node scripts/bos.mjs api",
+    "test": "node scripts/bos.mjs test",
+    "seed:demo": "node scripts/bos.mjs seed",
+    "typecheck": "npm --prefix apps/web run typecheck"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
