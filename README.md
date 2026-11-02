@@ -4,6 +4,10 @@ An operations system for lithium-ion battery refurbishment, repair and second-li
 product, **BatteryOS Intake & Intelligence**: register a battery → attach data and evidence → validate and organise it →
 prepare a human-reviewed diagnostic report → draft a quotation → track the battery's status and history.
 
+**Stack:** FastAPI · SQLAlchemy 2 · Alembic · SQLite (PostgreSQL-compatible) · pandas · ReportLab on the API side;
+Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · TanStack Query · Recharts on the web side; optional Claude API
+for drafting.
+
 The product brief this was built from is in [docs/product/brief.md](docs/product/brief.md). Architecture notes are in
 [docs/architecture.md](docs/architecture.md) and the main decisions are recorded in [docs/decisions](docs/decisions).
 
@@ -190,7 +194,7 @@ batteryos/
 - **Rate limiting is in-process**; use a shared limiter or gateway when scaling out.
 - CSV is the only data format; time-series files need a time column. Per-cell summary files (no time) are rejected with
   a clear message — record those values as results instead.
-- The AI paths were verified with automated tests that mock the model; with no API key available here, they have
-  not been run against the live Claude API.
+- The AI paths are covered by automated tests that mock the model; they have not yet been run against the live
+  Claude API.
 - Out of scope per the brief: hardware, universal BMS integrations, safety certification, SOH prediction, autonomous
   decisions, marketplace, payments, native mobile apps (the web app is responsive).
